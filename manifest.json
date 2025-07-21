@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Language Helper",
+  "version": "1.0",
+  "description": "Learn languages as you browse! Get translation, definition, pronunciation, synonyms, and examples for any selected text.",
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
