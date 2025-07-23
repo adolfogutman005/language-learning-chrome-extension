@@ -7,10 +7,27 @@
 <body>
   <div id="container">
     <h2 id="selected-text"></h2>
+
+    <!-- Buttons -->
+    <div id="buttons">
+      <button id="btn-all">✅ All</button>
+      <button id="btn-translate">🈯 Translation</button>
+      <button id="btn-explain">📖 Explanation</button>
+      <button id="btn-synonyms">🔁 Synonyms</button>
+      <button id="btn-examples">✍️ Examples</button>
+      <button id="btn-pronunciation">🔊 Pronunciation</button>
+    </div>
+
+    <!-- Result Sections -->
     <div id="results">
-      <p>Select a word or phrase, right-click, and choose "Check Language Info".</p>
+      <div id="translation-result"></div>
+      <div id="explanation-result"></div>
+      <div id="synonyms-result"></div>
+      <div id="examples-result"></div>
+      <div id="pronunciation-result"></div>
     </div>
   </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
