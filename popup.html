@@ -1,48 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Language Helper</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="container">
-    <h2 id="selected-text"></h2>
-
-    <!-- Language Selectors -->
-    <div id="language-selectors" style="margin-bottom: 1em;">
-      <label for="general-language">Info language:</label>
-      <select id="general-language" name="general-language">
-        <!-- options will be dynamically added -->
-      </select>
-
-      &nbsp;&nbsp;&nbsp;
-
-      <label for="translation-language">Translate to:</label>
-      <select id="translation-language" name="translation-language">
-        <!-- options will be dynamically added -->
-      </select>
-    </div>
-
-    <!-- Buttons -->
-    <div id="buttons">
-      <button id="btn-all">✅ All</button>
-      <button id="btn-translate">🈯 Translation</button>
-      <button id="btn-explain">📖 Explanation</button>
-      <button id="btn-synonyms">🔁 Synonyms</button>
-      <button id="btn-examples">✍️ Examples</button>
-      <button id="btn-pronunciation">🔊 Pronunciation</button>
-    </div>
-
-    <!-- Result Sections -->
-    <div id="results">
-      <div id="translation-result"></div>
-      <div id="explanation-result"></div>
-      <div id="synonyms-result"></div>
-      <div id="examples-result"></div>
-      <div id="pronunciation-result"></div>
-    </div>
+  <div class="popup-container">
+    <header class="popup-header">
+      <img src="https://fonts.gstatic.com/s/i/materialiconsoutlined/language/v16/24px.svg" alt="Language Helper" class="logo">
+      <h1>Language Helper</h1>
+    </header>
+    <main class="popup-main">
+      <section class="selected-text-section">
+        <div id="selected-text" class="selected-text-placeholder">Select text to get started…</div>
+      </section>
+      <section class="language-select-section">
+        <div class="selector-group">
+          <label for="general-language">Info language</label>
+          <select id="general-language" name="general-language"></select>
+        </div>
+        <div class="selector-group">
+          <label for="translation-language">Translate to</label>
+          <select id="translation-language" name="translation-language"></select>
+        </div>
+      </section>
+      <section class="action-buttons-section">
+        <button id="btn-all" class="action-btn"><span>✅</span> All</button>
+        <button id="btn-translate" class="action-btn"><span>🈯</span> Translation</button>
+        <button id="btn-explain" class="action-btn"><span>📖</span> Explanation</button>
+        <button id="btn-synonyms" class="action-btn"><span>🔁</span> Synonyms</button>
+        <button id="btn-examples" class="action-btn"><span>✍️</span> Examples</button>
+        <button id="btn-pronunciation" class="action-btn"><span>🔊</span> Pronunciation</button>
+      </section>
+      <section class="results-section" id="results">
+        <div id="translation-result" class="result-card"></div>
+        <div id="explanation-result" class="result-card"></div>
+        <div id="synonyms-result" class="result-card"></div>
+        <div id="examples-result" class="result-card"></div>
+        <div id="pronunciation-result" class="result-card"></div>
+      </section>
+    </main>
+    <footer class="popup-footer">
+      <span>Made with ❤️ for language learners</span>
+    </footer>
   </div>
-
   <script src="popup.js"></script>
 </body>
 </html>

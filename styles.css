@@ -1,84 +1,168 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 380px;
+/* Reset and base styles */
+body, html {
   margin: 0;
   padding: 0;
-  background: #f5f7fa;
-  color: #333;
-}
-
-#container {
-  padding: 16px;
-  box-sizing: border-box;
-}
-
-h2#selected-text {
-  font-size: 1.1em;
-  font-weight: 600;
-  margin-bottom: 16px;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #f7f8fa;
   color: #222;
-  word-wrap: break-word;
+  min-width: 340px;
+  min-height: 480px;
 }
 
-#language-selectors {
+.popup-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  max-width: 380px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.popup-header {
+  display: flex;
   align-items: center;
-  margin-bottom: 1em;
+  gap: 12px;
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
+  padding: 18px 20px 12px 20px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+.popup-header .logo {
+  width: 32px;
+  height: 32px;
+}
+.popup-header h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-#language-selectors label {
+.popup-main {
+  flex: 1;
+  padding: 18px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.selected-text-section {
+  background: #f0f4ff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 1.1rem;
+  color: #3a3a3a;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.selected-text-placeholder {
+  color: #b0b0b0;
+  font-style: italic;
+}
+
+.language-select-section {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+.selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.selector-group label {
+  font-size: 0.95rem;
+  color: #6a82fb;
   font-weight: 500;
+  margin-bottom: 2px;
+}
+.selector-group select {
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid #d1d5db;
+  background: #f7f8fa;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.selector-group select:focus {
+  border: 1.5px solid #6a82fb;
+  outline: none;
 }
 
-#language-selectors select {
-  padding: 6px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.9em;
-}
-
-#buttons {
+.action-buttons-section {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 16px;
+  justify-content: space-between;
+  margin-bottom: 2px;
 }
-
-#buttons button {
-  flex: 1 1 calc(50% - 10px);
-  background-color: #4f46e5;
-  color: white;
+.action-btn {
+  flex: 1 1 45%;
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
   border: none;
-  padding: 8px 10px;
   border-radius: 8px;
-  font-size: 0.9em;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 2px 0;
   cursor: pointer;
-  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  box-shadow: 0 2px 8px rgba(106,130,251,0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+.action-btn:hover, .action-btn:focus {
+  background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+  transform: translateY(-2px) scale(1.03);
 }
 
-#buttons button:hover {
-  background-color: #4338ca;
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
 }
-
-#results > div {
-  margin-bottom: 12px;
-  background-color: white;
+.result-card {
+  background: #f7f8fa;
   border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  font-size: 0.9em;
+  box-shadow: 0 1px 4px rgba(106,130,251,0.04);
+  padding: 10px 12px;
+  min-height: 24px;
+  font-size: 1rem;
+  color: #333;
+  transition: box-shadow 0.2s;
+}
+.result-card:not(:empty) {
+  box-shadow: 0 2px 8px rgba(252,92,125,0.08);
+  background: #fff0f6;
 }
 
-#results b {
-  display: block;
-  margin-bottom: 6px;
-  color: #111;
+.popup-footer {
+  background: #f7f8fa;
+  color: #6a82fb;
+  text-align: center;
+  padding: 10px 0 8px 0;
+  font-size: 0.98rem;
+  border-top: 1px solid #ececec;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
 
-audio {
-  width: 100%;
-  margin-top: 6px;
-  outline: none;
+@media (max-width: 400px) {
+  .popup-container {
+    max-width: 100vw;
+    border-radius: 0;
+  }
+  .popup-main {
+    padding: 12px 6px 0 6px;
+  }
 }
