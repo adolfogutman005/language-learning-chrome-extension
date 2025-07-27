@@ -69,14 +69,18 @@ body, html {
 
 .language-select-section {
   display: flex;
-  gap: 18px;
+  gap: 12px;
   justify-content: space-between;
+  margin-left: 0;
+  margin-right: 0;
 }
 .selector-group {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 48%;
 }
 .selector-group label {
   font-size: 0.95rem;
@@ -85,6 +89,8 @@ body, html {
   margin-bottom: 2px;
 }
 .selector-group select {
+  width: 100%;
+  box-sizing: border-box;
   padding: 6px 10px;
   border-radius: 7px;
   border: 1px solid #333;
@@ -92,6 +98,13 @@ body, html {
   color: #f1f1f1;
   font-size: 1rem;
   transition: border 0.2s, background 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23b0b0b0" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px;
 }
 .selector-group select:focus {
   border: 1.5px solid #888;
