@@ -170,26 +170,72 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 8px 0;
+  margin-top: 8px;
 }
 
 .chip {
   background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
   color: white;
   padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: 16px;
   font-size: 0.9rem;
   font-weight: 500;
-  box-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+  display: inline-block;
   transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  user-select: none;
 }
 
 .chip:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.4);
-  background: linear-gradient(135deg, #5a9ee2 0%, #458bcd 100%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #5a9ee2 0%, #458acd 100%);
+}
+
+/* Labeled chips styles */
+.labeled-chips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.labeled-chip {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid #3498db;
+}
+
+.chip-label {
+  font-weight: 600;
+  color: #bdc3c7;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+}
+
+.chip-value {
+  font-weight: 500;
+  color: #ecf0f1;
+  text-align: right;
+  flex: 1;
+  margin-left: 12px;
+}
+
+.labeled-chip:hover {
+  transform: translateX(2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #34495e 0%, #3c5a6b 100%);
 }
 
 /* Card-style presentation */
