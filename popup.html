@@ -8,7 +8,18 @@
 </head>
 <body>
   <div class="popup-container">
-    <main class="popup-main">
+    <!-- Navigation Tabs -->
+    <nav class="popup-nav">
+      <button class="nav-tab active" data-page="translate">
+        <span>🈯</span> Translate & Info
+      </button>
+      <button class="nav-tab" data-page="feedback">
+        <span>✍️</span> Writing Feedback
+      </button>
+    </nav>
+
+    <!-- Page 1: Translation & Info (current functionality) -->
+    <main class="popup-main page" id="translate-page">
       <section class="selected-text-section">
         <div id="selected-text" class="selected-text-placeholder">Select text to get started…</div>
       </section>
@@ -38,6 +49,49 @@
         <div id="pronunciation-result" class="result-card"></div>
       </section>
     </main>
+
+    <!-- Page 2: Writing Feedback (new functionality) -->
+    <main class="popup-main page hidden" id="feedback-page">
+      <section class="writing-input-section">
+        <label for="writing-input">Write something to get feedback:</label>
+        <textarea 
+          id="writing-input" 
+          class="writing-textarea" 
+          placeholder="Type your text here..."
+          rows="4"
+        ></textarea>
+      </section>
+      <section class="feedback-language-section">
+        <div class="selector-group">
+          <label for="feedback-language">Language</label>
+          <select id="feedback-language" name="feedback-language"></select>
+        </div>
+      </section>
+      <section class="feedback-action-section">
+        <button id="btn-get-feedback" class="action-btn primary">
+          <span>🔍</span> Get Feedback
+        </button>
+      </section>
+      <section class="feedback-results-section" id="feedback-results">
+        <div id="corrected-version" class="feedback-card">
+          <h3>✅ Corrected Version</h3>
+          <div class="feedback-content"></div>
+        </div>
+        <div id="natural-version" class="feedback-card">
+          <h3>🌟 More Natural Version</h3>
+          <div class="feedback-content"></div>
+        </div>
+        <div id="mistakes-explanation" class="feedback-card">
+          <h3>📚 Mistakes & Grammar</h3>
+          <div class="feedback-content"></div>
+        </div>
+        <div id="learning-progress" class="feedback-card">
+          <h3>🎯 What You Learned</h3>
+          <div class="feedback-content"></div>
+        </div>
+      </section>
+    </main>
+
     <footer class="popup-footer">
       <span>Made with ❤️ for language learners</span>
     </footer>
