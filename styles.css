@@ -154,12 +154,7 @@ body, html {
   background: #1a1c1d;
 }
 
-.feedback-language-section {
-  display: flex;
-  justify-content: center;
-  margin-left: 0;
-  margin-right: 0;
-}
+
 
 .feedback-action-section {
   display: flex;
